@@ -1,0 +1,210 @@
+/* Estilos generales */
+.root {
+    -fx-font-family: "System";
+    -fx-background-color: #f5f5f5;
+}
+
+/* Título de la aplicación */
+.app-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2a5885;
+}
+
+/* Secciones */
+.section-header {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-border-color: #ccc;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 5 0 5 0;
+}
+
+/* Iconos de ayuda */
+.help-icon {
+    -fx-font-size: 14px;
+    -fx-text-fill: #4284f5;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-background-radius: 50%;
+    -fx-background-color: #e6f0ff;
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+    -fx-max-width: 18px;
+    -fx-max-height: 18px;
+    -fx-alignment: center;
+}
+
+.help-icon:hover {
+    -fx-background-color: #c6d9f7;
+}
+
+/* Botones */
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.button:pressed {
+    -fx-background-color: #1c6ea4;
+}
+
+/* Contenedor de error */
+.error-container {
+    -fx-background-color: #ffebee;
+    -fx-border-color: #f44336;
+}
+
+/* Estilos generales */
+.root {
+    -fx-font-family: "System";
+    -fx-background-color: #f5f5f5;
+}
+
+/* Título de la aplicación */
+.app-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2a5885;
+}
+
+/* Secciones */
+.section-header {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-border-color: #ccc;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 5 0 5 0;
+}
+
+/* Iconos de ayuda */
+.help-icon {
+    -fx-font-size: 14px;
+    -fx-text-fill: #4284f5;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-background-radius: 50%;
+    -fx-background-color: #e6f0ff;
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+    -fx-max-width: 18px;
+    -fx-max-height: 18px;
+    -fx-alignment: center;
+}
+
+.help-icon:hover {
+    -fx-background-color: #c6d9f7;
+}
+
+/* Botones */
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.button:pressed {
+    -fx-background-color: #1c6ea4;
+}
+
+/* Contenedor de error */
+.error-container {
+    -fx-background-color: #ffebee;
+    -fx-border-color: #f44336;
+    -fx-border-radius: 4;
+    -fx-padding: 10;
+    -fx-spacing: 5;
+}
+
+.error-title {
+    -fx-text-fill: #d32f2f;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.error-description {
+    -fx-text-fill: #d32f2f;
+}
+
+/* Campos de entrada */
+.text-field {
+    -fx-background-radius: 3;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 3;
+    -fx-border-width: 1;
+    -fx-padding: 5;
+}
+
+.text-field:focused {
+    -fx-border-color: #2a5885;
+}
+
+/* Contenedor de resultados */
+.result-section {
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1);
+    -fx-margin-bottom: 10;
+}
+
+/* Estilo para las celdas de matriz */
+.matrix-cell {
+    -fx-border-color: #ddd;
+    -fx-background-color: #f9f9f9;
+    -fx-padding: 5;
+    -fx-alignment: center;
+}
+
+/* Estilo para Spinner */
+.spinner {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 3;
+}
+
+.spinner > .text-field {
+    -fx-background-color: white;
+    -fx-border-width: 0;
+}
+
+.spinner .increment-arrow-button, .spinner .decrement-arrow-button {
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #ccc;
+}
+
+.spinner .increment-arrow-button:hover, .spinner .decrement-arrow-button:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+/* Tabs */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #f0f0f0;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #e0e0e0;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #3498db;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
