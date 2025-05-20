@@ -1,4 +1,4 @@
-package com.varcal;
+package com.varcal.logica;
 
 // Crea esta clase para devolver los resultados:
 

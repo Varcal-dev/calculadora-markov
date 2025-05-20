@@ -1,4 +1,4 @@
-package com.varcal;
+package com.varcal.logica;
 
 public class TestMarkov {
     public static void main(String[] args) {

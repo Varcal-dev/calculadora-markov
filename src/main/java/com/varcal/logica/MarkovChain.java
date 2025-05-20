@@ -1,4 +1,4 @@
-package com.varcal;
+package com.varcal.logica;
 
 public class MarkovChain {
 
