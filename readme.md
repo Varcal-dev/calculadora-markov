@@ -7,12 +7,15 @@ Esta es una aplicación de escritorio interactiva desarrollada en Java con JavaF
 ## ✨ Funcionalidades
 
 - **🔁 Cálculo de Estado Estacionario**
+
     Calcula el vector de estado estacionario de una cadena de Markov, representando las probabilidades a largo plazo de estar en cada estado.
 
 - **🔮 Cálculo de Estado Futuro (Proyección Pⁿ)**
+
     Calcula el vector de estado después de un número definido de pasos, mostrando cómo evolucionan las probabilidades con el tiempo.
 
 - **🧲 Análisis de Cadenas Absorbentes**
+
     Incluye herramientas especializadas para trabajar con cadenas con estados absorbentes:
 
 - **🔍 Detección de Estados Absorbentes**
@@ -24,6 +27,7 @@ Esta es una aplicación de escritorio interactiva desarrollada en Java con JavaF
 - **📊 Cálculo de las Probabilidades de Absorción (B)**
 
 - **🎨 Interfaz Gráfica Intuitiva**
+
     Interfaz amigable y dinámica para ingresar fácilmente la matriz de transición, el vector de estado inicial y el número de pasos.
 ---
 
@@ -31,15 +35,15 @@ Esta es una aplicación de escritorio interactiva desarrollada en Java con JavaF
 
 - **✍️ Ingresa el Número de Estados**
 
-Define el número de estados de tu cadena de Markov (n) con el control tipo Spinner.
+    Define el número de estados de tu cadena de Markov (n) con el control tipo Spinner.
 
 - **✍️ Ingresa la Matriz de Transición**
 
-Cada fila representa un estado y debe sumar 1.
+    Cada fila representa un estado y debe sumar 1.
 
 - **✍️ Ingresa el Vector de Estado Inicial (opcional)**
 
-Si no se especifica, se usará por defecto [1, 0, 0, …].
+    Si no se especifica, se usará por defecto [1, 0, 0, …].
 
 - **⚙️ Selecciona la Operación Deseada**
 
@@ -50,6 +54,7 @@ Si no se especifica, se usará por defecto [1, 0, 0, …].
 - **🧲 Herramientas de análisis para cadenas absorbentes**
 
 - **✅ Haz clic en el botón correspondiente para calcular**
+
     Verás los resultados generados dinámicamente en la parte inferior.
 ---
 
