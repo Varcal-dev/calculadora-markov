@@ -66,7 +66,7 @@ Esta es una aplicación de escritorio interactiva desarrollada en Java con JavaF
     ```
 
 ## 📁 Estructura del Proyecto
-    ```bash
+
     src/
     ├── main/
     │   ├── java/
@@ -77,7 +77,6 @@ Esta es una aplicación de escritorio interactiva desarrollada en Java con JavaF
     │   └── resources/
     │       ├── com/varcal/markov_chain.fxml          # Interfaz gráfica
     │       └── com/varcal/style.css                  # Estilos visuales (CSS)
-    ```
 
 ## 💡 Contribuciones
 
