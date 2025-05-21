@@ -1,6 +1,6 @@
 # 📊 Calculadora de Cadenas de Markov
 
-Esta es una aplicación de escritorio interactiva desarrollada en Java con JavaFX que permite realizar cálculos relacionados con cadenas de Markov, incluyendo análisis de cadenas regulares y absorbentes. Entre sus funcionalidades se incluyen el cálculo de vectores de estado futuro, estado estacionario, detección de estados absorbentes y matriz fundamental.
+    Esta es una aplicación de escritorio interactiva desarrollada en Java con JavaFX que permite realizar cálculos relacionados con cadenas de Markov, incluyendo análisis de cadenas regulares y absorbentes. Entre sus funcionalidades se incluyen el cálculo de vectores de estado futuro, estado estacionario, detección de estados absorbentes y matriz fundamental.
 ---
 
 ## ✨ Funcionalidades
