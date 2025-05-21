@@ -14,19 +14,13 @@ import java.io.IOException;
 public class App extends Application {
 
     @Override
-    public void start(Stage stage) throws IOException {
-        // Cargar el FXML principal
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("markov_chain.fxml"));
-        Parent root = loader.load();
+   public void start(Stage stage) throws Exception {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/varcal/markov_chain.fxml"));
+        Parent root = fxmlLoader.load();
 
-        // Configurar la escena y el escenario
         Scene scene = new Scene(root);
-
-        // Añadir estilos CSS (opcional)
-        scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
-
-        stage.setTitle("Calculadora de Cadenas de Markov");
         stage.setScene(scene);
+        stage.setTitle("Calculadora de cadenas de Markov");
         stage.show();
     }
 

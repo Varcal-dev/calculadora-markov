@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
@@ -18,195 +17,191 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.varcal.MarkovChainController">
-   <center>
-      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-        <tabs>
-          <Tab text="Entrada">
-               <content>
-                  <ScrollPane fitToWidth="true">
-                     <content>
-                        <VBox spacing="20.0">
-                           <padding>
-                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                           </padding>
-                           <children>
-                              <!-- Número de Estados Input -->
-                              <VBox spacing="10.0">
-                                 <children>
-                                    <HBox alignment="CENTER_LEFT" spacing="5.0">
-                                       <children>
-                                          <Label text="Número de Estados (n):">
-                                             <font>
-                                                <Font name="System Bold" size="12.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="helpNumStates" text="?" styleClass="help-icon">
-                                             <tooltip>
-                                                <Tooltip text="Ingrese el número de estados en la cadena de Markov" />
-                                             </tooltip>
-                                          </Label>
-                                       </children>
-                                    </HBox>
-                                    <HBox spacing="10.0">
-                                       <children>
-                                          <Spinner fx:id="numStatesSpinner" prefWidth="100.0" />
-                                          <Button fx:id="generateMatrixButton" onAction="#handleGenerateMatrix" text="Generar Matriz" />
-                                       </children>
-                                    </HBox>
-                                 </children>
-                              </VBox>
-                              
-                              <!-- Transition Matrix Input -->
-                              <VBox spacing="10.0">
-                                 <children>
-                                    <HBox alignment="CENTER_LEFT" spacing="5.0">
-                                       <children>
-                                          <Label text="Matriz de Transición:">
-                                             <font>
-                                                <Font name="System Bold" size="12.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="helpTransitionMatrix" text="?" styleClass="help-icon">
-                                             <tooltip>
-                                                <Tooltip text="Ingrese las probabilidades de transición. Cada fila debe sumar 1." />
-                                             </tooltip>
-                                          </Label>
-                                       </children>
-                                    </HBox>
-                                    <ScrollPane>
-                                       <content>
-                                          <GridPane fx:id="matrixGrid" hgap="5.0" vgap="5.0">
-                                          </GridPane>
-                                       </content>
-                                    </ScrollPane>
-                                 </children>
-                              </VBox>
-                              
-                              <!-- Initial State Vector -->
-                              <VBox spacing="10.0">
-                                 <children>
-                                    <HBox alignment="CENTER_LEFT" spacing="5.0">
-                                       <children>
-                                          <Label text="Vector de Estado Inicial (opcional):">
-                                             <font>
-                                                <Font name="System Bold" size="12.0" />
-                                             </font>
-                                          </Label>
-                                          <Label fx:id="helpInitialState" text="?" styleClass="help-icon">
-                                             <tooltip>
-                                                <Tooltip text="Vector de distribución inicial. Por defecto [1,0,0,...]" />
-                                             </tooltip>
-                                          </Label>
-                                       </children>
-                                    </HBox>
-                                    <HBox fx:id="initialStateContainer" spacing="10.0">
-                                       <!-- Initial state inputs will be added here dynamically -->
-                                    </HBox>
-                                 </children>
-                              </VBox>
-                              
-                              <!-- Calculation Options -->
-                              <VBox spacing="15.0">
-                                 <children>
-                                    <VBox spacing="10.0">
-                                       <children>
-                                          <Label text="Número de Pasos (n):">
-                                             <font>
-                                                <Font name="System Bold" size="12.0" />
-                                             </font>
-                                          </Label>
-                                          <HBox spacing="10.0">
-                                             <children>
-                                                <Spinner fx:id="stepsSpinner" prefWidth="100.0" />
-                                                <Button fx:id="calculateProjectionButton" onAction="#handleCalculateProjection" text="Calcular Proyección (P^n)" />
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                    </VBox>
-                                    
-                                    <!-- Absorbing Chain Options -->
-                                    <VBox spacing="10.0">
-                                       <children>
-                                          <Label text="Cadenas Absorbentes" styleClass="section-header">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <GridPane hgap="10.0" vgap="10.0">
-                                             <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                             </columnConstraints>
-                                             <rowConstraints>
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                             </rowConstraints>
-                                             <children>
-                                                <Button fx:id="detectAbsorbingStatesButton" onAction="#handleDetectAbsorbingStates" text="Detectar Estados Absorbentes" GridPane.columnIndex="0" GridPane.rowIndex="0" maxWidth="Infinity" />
-                                                <Button fx:id="calculateCanonicalFormButton" onAction="#handleCalculateCanonicalForm" text="Calcular Matriz Canónica" GridPane.columnIndex="1" GridPane.rowIndex="0" maxWidth="Infinity" />
-                                                <Button fx:id="calculateFundamentalMatrixButton" onAction="#handleCalculateFundamentalMatrix" text="Calcular Matriz Fundamental (N)" GridPane.columnIndex="0" GridPane.rowIndex="1" maxWidth="Infinity" />
-                                                <Button fx:id="calculateAbsorptionProbabilitiesButton" onAction="#handleCalculateAbsorptionProbabilities" text="Calcular Probabilidades de Absorción (B)" GridPane.columnIndex="1" GridPane.rowIndex="1" maxWidth="Infinity" />
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </VBox>
-                              
-                              <!-- Error Messages -->
-                              <VBox fx:id="errorContainer" spacing="5.0" styleClass="error-container" visible="false">
-                                 <children>
-                                    <Label text="Error" styleClass="error-title">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label fx:id="errorMessage" styleClass="error-description" />
-                                 </children>
-                              </VBox>
-                           </children>
-                        </VBox>
-                     </content>
-                  </ScrollPane>
-               </content>
-          </Tab>
-          <Tab text="Resultados">
-               <content>
-                  <ScrollPane fitToWidth="true">
-                     <content>
-                        <VBox spacing="20.0">
-                           <padding>
-                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                           </padding>
-                           <children>
-                              <!-- Matrix Results Section -->
-                              <VBox fx:id="resultContainer" spacing="15.0">
-                                 <children>
-                                    <!-- Result sections will be added here dynamically -->
-                                 </children>
-                              </VBox>
-                           </children>
-                        </VBox>
-                     </content>
-                  </ScrollPane>
-               </content>
-          </Tab>
-        </tabs>
-      </TabPane>
-   </center>
-   <top>
-      <VBox alignment="CENTER" spacing="5.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label text="Calculadora de Cadenas de Markov" styleClass="app-title">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-         </children>
-         <padding>
-            <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
-         </padding>
-      </VBox>
-   </top>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0"
+    xmlns="http://javafx.com/javafx/11.0.1"
+    xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.varcal.controller.MarkovChainController">
+    <center>
+        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab text="Entrada">
+                    <content>
+                        <ScrollPane fitToWidth="true">
+                            <content>
+                                <VBox spacing="20.0">
+                                    <padding>
+                                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                    </padding>
+                                    <children>
+                                        <!-- Número de Estados Input -->
+                                        <VBox spacing="10.0">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                                    <children>
+                                                        <Label text="Número de Estados (n):">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="helpNumStates" text="?" styleClass="help-icon">
+                                                            <tooltip>
+                                                                <Tooltip text="Ingrese el número de estados en la cadena de Markov" />
+                                                            </tooltip>
+                                                        </Label>
+                                                    </children>
+                                                </HBox>
+                                                <HBox spacing="10.0">
+                                                    <children>
+                                                        <Spinner fx:id="numStatesSpinner" prefWidth="100.0" />
+                                                        <Button fx:id="generateMatrixButton" onAction="#handleGenerateMatrix" text="Generar Matriz" />
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+
+                                        <!-- Transition Matrix Input -->
+                                        <VBox spacing="10.0">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                                    <children>
+                                                        <Label text="Matriz de Transición:">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="helpTransitionMatrix" text="?" styleClass="help-icon">
+                                                            <tooltip>
+                                                                <Tooltip text="Ingrese las probabilidades de transición. Cada fila debe sumar 1." />
+                                                            </tooltip>
+                                                        </Label>
+                                                    </children>
+                                                </HBox>
+                                                <ScrollPane>
+                                                    <content>
+                                                        <GridPane fx:id="matrixGrid" hgap="5.0" vgap="5.0">
+                                                        </GridPane>
+                                                    </content>
+                                                </ScrollPane>
+                                            </children>
+                                        </VBox>
+
+                                        <!-- Initial State Vector -->
+                                        <VBox spacing="10.0">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                                    <children>
+                                                        <Label text="Vector de Estado Inicial (opcional):">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <Label fx:id="helpInitialState" text="?" styleClass="help-icon">
+                                                            <tooltip>
+                                                                <Tooltip text="Vector de distribución inicial. Por defecto [1,0,0,...]" />
+                                                            </tooltip>
+                                                        </Label>
+                                                    </children>
+                                                </HBox>
+                                                <HBox fx:id="initialStateContainer" spacing="10.0">
+                                                    <!-- Initial state inputs will be added here dynamically -->
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+
+                                        <!-- Calculation Options -->
+                                        <VBox spacing="15.0">
+                                            <children>
+                                                <VBox spacing="10.0">
+                                                    <children>
+                                                        <Label text="Número de Pasos (n):">
+                                                            <font>
+                                                                <Font name="System Bold" size="12.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <HBox spacing="10.0">
+                                                            <children>
+                                                                <Spinner fx:id="stepsSpinner" prefWidth="100.0" />
+                                                                <Button fx:id="calculateProjectionButton" onAction="#handleCalculateProjection" text="Calcular Proyección (P^n)" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+
+                                                <!-- Absorbing Chain Options -->
+                                                <VBox spacing="10.0">
+                                                    <children>
+                                                        <Label text="Cadenas Absorbentes" styleClass="section-header">
+                                                            <font>
+                                                                <Font name="System Bold" size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <GridPane hgap="10.0" vgap="10.0">
+                                                            <columnConstraints>
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            </rowConstraints>
+                                                            <children>
+                                                                <Button fx:id="detectAbsorbingStatesButton" onAction="#handleDetectAbsorbingStates" text="Detectar Estados Absorbentes" GridPane.columnIndex="0" GridPane.rowIndex="0" maxWidth="Infinity" />
+                                                                <Button fx:id="calculateCanonicalFormButton" onAction="#handleCalculateCanonicalForm" text="Calcular Matriz Canónica" GridPane.columnIndex="1" GridPane.rowIndex="0" maxWidth="Infinity" />
+                                                                <Button fx:id="calculateFundamentalMatrixButton" onAction="#handleCalculateFundamentalMatrix" text="Calcular Matriz Fundamental (N)" GridPane.columnIndex="0" GridPane.rowIndex="1" maxWidth="Infinity" />
+                                                                <Button fx:id="calculateAbsorptionProbabilitiesButton" onAction="#handleCalculateAbsorptionProbabilities" text="Calcular Probabilidades de Absorción (B)" GridPane.columnIndex="1" GridPane.rowIndex="1" maxWidth="Infinity" />
+                                                            </children>
+                                                        </GridPane>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </VBox>
+
+                                        <!-- Error Messages -->
+                                        <VBox fx:id="errorContainer" spacing="5.0" styleClass="error-container" visible="false">
+                                            <children>
+                                                <Label text="Error" styleClass="error-title">
+                                                    <font>
+                                                        <Font name="System Bold" size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="errorMessage" styleClass="error-description" />
+                                            </children>
+                                        </VBox>
+
+
+                                        <!-- Matrix Results Section -->
+                                        <VBox fx:id="resultContainer" spacing="15.0">
+                                            <children>
+                                                <Label fx:id="resultTitle" text="Resultados" styleClass="section-header">
+                                                    <font>
+                                                        <Font name="System Bold" size="16.0" />
+                                                    </font>
+                                                </Label>
+                                                <!-- Aquí se agregarán dinámicamente los resultados -->
+                                            </children>
+                                        </VBox>
+
+                                    </children>
+                                </VBox>
+                            </content>
+                        </ScrollPane>
+                    </content>
+                </Tab>
+
+            </tabs>
+        </TabPane>
+    </center>
+    <top>
+        <VBox alignment="CENTER" spacing="5.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Calculadora de Cadenas de Markov" styleClass="app-title">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </VBox>
+    </top>
 </BorderPane>

@@ -429,9 +429,10 @@ public class MarkovChainController {
         titleLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
         section.getChildren().add(titleLabel);
 
-        // Add to results container
-        resultContainer.getChildren().add(0, section); // Add at top
+        // Add to results container (después del título "Resultados")
+        resultContainer.getChildren().add(section);
 
         return section;
     }
+
 }
