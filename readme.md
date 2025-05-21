@@ -50,17 +50,17 @@ Esta es una aplicación de escritorio interactiva desarrollada en Java con JavaF
    ```bash
    git clone <repository_url>
 
-## 📂 Entra en el directorio del proyecto:
+2. 📂 Entra en el directorio del proyecto:
    ```bash 
    cd <nombre_del_proyecto>
    ```
 
-## 🧱 Construye el proyecto:
+3. 🧱 Construye el proyecto:
     ```bash
     mvn clean install
     ```
 
-## ▶️ Ejecuta la aplicación:
+4. ▶️ Ejecuta la aplicación:
     ```bash
     mvn javafx:run
     ```
