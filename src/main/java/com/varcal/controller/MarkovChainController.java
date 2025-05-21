@@ -7,9 +7,12 @@ import java.util.List;
 import com.varcal.logica.MarkovChain;
 import com.varcal.logica.ResultCanonical;
 
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
@@ -40,6 +43,7 @@ public class MarkovChainController {
     private Label errorMessage;
     @FXML
     private VBox resultContainer;
+    
 
     // State variables
     private int numStates = 3;
@@ -50,6 +54,38 @@ public class MarkovChainController {
 
     // Format for displaying decimal numbers
     private final DecimalFormat df = new DecimalFormat("0.####");
+
+    
+
+    @FXML
+    private void handleClearResults() {
+        // Conserva el título, elimina todos los demás hijos
+        resultContainer.getChildren().removeIf(node -> node != resultContainer.getChildren().get(0));
+    }
+
+    @FXML
+    public void handleExit(ActionEvent event) {
+        Platform.exit();
+    }
+
+    @FXML
+    public void handleShowInstructions(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Instrucciones");
+        alert.setHeaderText("Cómo usar la Calculadora de Cadenas de Markov");
+        alert.setContentText(
+                "1. Ingrese el número de estados...\n2. Complete la matriz de transición...\n3. Elija el cálculo deseado...");
+        alert.showAndWait();
+    }
+
+    @FXML
+    public void handleShowAbout(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Acerca de");
+        alert.setHeaderText("Calculadora de Cadenas de Markov");
+        alert.setContentText("Desarrollado por VarCal Tech\nVersión 1.0\n© 2025");
+        alert.showAndWait();
+    }
 
     @FXML
     public void initialize() {

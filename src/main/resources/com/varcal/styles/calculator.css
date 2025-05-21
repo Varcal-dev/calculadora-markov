@@ -1,0 +1,112 @@
+.root {
+    -fx-font-family: "Segoe UI", "System";
+    -fx-background-color: linear-gradient(to bottom, #f5faff, #dce6f3);
+}
+
+.calculator-pane {
+    -fx-padding: 20;
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+
+.app-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0066cc;
+}
+
+.section-header {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e3d59;
+    -fx-border-color: #cbd5e0;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 8 0 5 0;
+}
+
+/* Botones */
+.button {
+    -fx-background-color: linear-gradient(to bottom, #45b3ff, #0073e6);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 8 14;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #005bb5;
+}
+
+.button:pressed {
+    -fx-background-color: #004999;
+}
+
+/* Iconos de ayuda */
+.help-icon {
+    -fx-font-size: 12px;
+    -fx-text-fill: #0a84ff;
+    -fx-background-color: #e0f0ff;
+    -fx-background-radius: 50%;
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+    -fx-max-width: 18px;
+    -fx-max-height: 18px;
+    -fx-alignment: center;
+}
+
+/* Campos de entrada */
+.text-field, .spinner > .text-field {
+    -fx-background-radius: 6;
+    -fx-border-color: #a0b3c2;
+    -fx-border-radius: 6;
+    -fx-border-width: 1;
+    -fx-padding: 5;
+    -fx-background-color: white;
+}
+
+.text-field:focused {
+    -fx-border-color: #0073e6;
+}
+
+.spinner .increment-arrow-button, .spinner .decrement-arrow-button {
+    -fx-background-color: #f0f4fa;
+    -fx-border-color: #cbd5e0;
+}
+
+/* Resultados */
+.result-section {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #b4c8de;
+    -fx-border-radius: 6;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 6, 0, 0, 1);
+}
+
+/* Celdas de matriz */
+.matrix-cell {
+    -fx-border-color: #dce3ed;
+    -fx-background-color: #f8fbff;
+    -fx-padding: 4;
+    -fx-alignment: center;
+}
+
+/* Contenedor de error */
+.error-container {
+    -fx-background-color: #ffeaea;
+    -fx-border-color: #d93838;
+    -fx-border-radius: 6;
+    -fx-padding: 10;
+}
+
+.error-title {
+    -fx-text-fill: #b30000;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.error-description {
+    -fx-text-fill: #a40000;
+}

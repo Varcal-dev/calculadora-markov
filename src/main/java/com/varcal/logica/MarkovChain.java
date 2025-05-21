@@ -136,7 +136,7 @@ public class MarkovChain {
     // Calcular inversa de (I - Q)
 
     public static double[][] invertMatrix(double[][] matrix) {
-        int n = matrix.length;
+        //int n = matrix.length;
         org.apache.commons.math3.linear.RealMatrix m = new org.apache.commons.math3.linear.Array2DRowRealMatrix(matrix);
         org.apache.commons.math3.linear.RealMatrix inverse = org.apache.commons.math3.linear.MatrixUtils.inverse(m);
         return inverse.getData();
@@ -159,7 +159,8 @@ public class MarkovChain {
         double[][] N = invertMatrix(IQ);
         double[][] B = multiply(N, R);
 
-        return new ResultCanonical(Q, R, N, B);
+        return new ResultCanonical(Q, R, N, B, absIdx, nonAbsIdx);
+
     }
 
     public static double[][] subtract(double[][] A, double[][] B) {
