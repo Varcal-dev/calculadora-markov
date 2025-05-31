@@ -74,17 +74,17 @@ Esta es una aplicación de escritorio interactiva desarrollada en Java con JavaF
 2. 📂 Entra en el directorio del proyecto:
    ```bash 
    cd <nombre_del_proyecto>
-   ```
+   
 
 3. 🧱 Construye el proyecto:
     ```bash
     mvn clean install
-    ```
+    
 
 4. ▶️ Ejecuta la aplicación:
     ```bash
     mvn javafx:run
-    ```
+    
 
 ## 📁 Estructura del Proyecto
 
@@ -101,13 +101,15 @@ Esta es una aplicación de escritorio interactiva desarrollada en Java con JavaF
 
 ## 💡 Contribuciones
 
-    ¡Las contribuciones son bienvenidas!
+   ¡Las contribuciones son bienvenidas!
     Puedes abrir issues, enviar pull requests o proponer mejoras.
 
 ## 🧑‍💻 Autor
-    Desarrollado por VarCal Tech.
+
+   Desarrollado por VarCal Tech.
     📍 Caquetá, Colombia
 
 ## 📄 Licencia
-    Este proyecto está bajo la Licencia MIT.
+
+   Este proyecto está bajo la Licencia MIT.
     Consulta el archivo LICENSE para más detalles.
