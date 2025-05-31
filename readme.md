@@ -69,7 +69,7 @@ Esta es una aplicación de escritorio interactiva desarrollada en Java con JavaF
 
 1. 📥 Clona el repositorio:
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/Varcal-dev/calculadora-markov
 
 2. 📂 Entra en el directorio del proyecto:
    ```bash 
